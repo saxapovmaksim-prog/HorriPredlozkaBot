@@ -40,11 +40,11 @@ async def cmd_start(message: Message):
         return
     
     if message.from_user.id == ADMIN_ID:
-        await message.answer("👋 Добро пожаловать в админ-панель!", reply_markup=get_admin_keyboard())
+        await message.answer("👋 Добро пожаловать в админ-панель, Макс!", reply_markup=get_admin_keyboard())
     else:
         await message.answer(
             "Привет! Напиши свое обращение/предложение сюда, и я передам его администратору.\n\n"
-            f"⏳ Обратите внимание: отправлять сообщен��я можно не чаще, чем раз в {COOLDOWN_MINUTES} минуты."
+            f"⏳ Обратите внимание: отправлять сообщения можно не чаще, чем раз в {COOLDOWN_MINUTES} минуты."
         )
 
 @dp.message(Command("admin"))
